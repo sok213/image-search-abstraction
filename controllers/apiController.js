@@ -1,4 +1,5 @@
 const config  = require('../config'),
+  mongoose    = require('mongoose'),
   searchQuery = require('../model/imageResultModel'),
   request     = require('request');
 
@@ -44,4 +45,34 @@ module.exports = app => {
       }
     );
   });
+  
+  // When client connects to /api/latest, app will respond with
+  // the last 10 search terms pulled from mLab.
+  app.get('/api/latest', (req, res) => {
+    // Find last 10 results and send it as an HTTP response.
+    searchQuery.find({}, function(err, result){
+      res.send(result);
+    });
+  });
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
