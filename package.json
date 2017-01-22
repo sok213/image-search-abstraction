@@ -10,6 +10,10 @@
   "author": "Sophanarith Sok",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
+    "install": "^0.8.4",
+    "mongoose": "^4.7.7",
+    "npm": "^4.1.1",
     "request": "^2.79.0",
     "url": "^0.11.0"
   }
