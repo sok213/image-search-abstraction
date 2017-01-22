@@ -22,7 +22,7 @@ module.exports = app => {
           
           // Create newSearch object with values retrieved from URL parameter
           let newSearch = searchQuery({
-            url: req.params.term,
+            searchTerm: req.params.term,
             timeSearched: new Date().toISOString()
           });
           
