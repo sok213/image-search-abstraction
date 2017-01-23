@@ -14,6 +14,10 @@ mongoose.connect(config.mlabURI());
 // request on /api/search/:term
 apiController(app);
 
+// Pipe the asset folder.
+app.use('/', express.static('assets'));
+
+// Handle non-existent pages by sending in 404.html file.
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/404.html'));
 });
