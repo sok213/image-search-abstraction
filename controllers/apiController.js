@@ -20,6 +20,8 @@ module.exports = app => {
       (err, response, data) => {
         // If no error, send JSON data as an HTTP reponse.
         if (!err && response.statusCode == 200) {
+          
+          // Debugging logs.
           console.log(`Search for ${ req.params.term } was successful!`);
           console.log(`Setting offset to ${ req.query.offset }`);
           

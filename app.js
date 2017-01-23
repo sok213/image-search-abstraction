@@ -4,6 +4,7 @@ const express   = require('express'),
   url           = require('url'),
   config        = require('./config'),
   apiController = require('./controllers/apiController'),
+  path          = require('path'),
   port          = process.env.PORT || 3000;
 
 // Connect to my mLab database.
@@ -12,6 +13,10 @@ mongoose.connect(config.mlabURI());
 // Serve app to apiController module which will listen to any 
 // request on /api/search/:term
 apiController(app);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/404.html'));
+});
 
 // Initiate express app.
 app.listen(port);

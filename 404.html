@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style media="screen">
+      .container {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #333333;
+        font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="imagesearchabstractionlayer">Image Search Abstraction Layer</h1>
+
+      <hr />
+
+      <h2 id="howtousethisapplication">How to use this application</h2>
+
+      <h3 id="searchingimages">Searching Images</h3>
+
+      <p>Search an image. This is an example on how to search images with the term <em>flowers</em>. You can replace <em>flowers</em> with your own keywords.</p>
+
+      <pre><code>https://img-srch-abstraction.herokuapp.com/api/search/flowers
+      </code></pre>
+
+      <h3 id="paginationwiththeoffsetquery">Pagination With the Offset Query</h3>
+
+      <p>You may also include an optional query <code>?offset=1</code> to paginate through the search results.</p>
+
+      <p>Below is an example of how to paginate through 3 pages of the search term <em>mansion</em>.</p>
+
+      <pre><code>https://img-srch-abstraction.herokuapp.com/api/search/mansion?offset=3
+      </code></pre>
+
+      <h3 id="viewthelatestsearchterms">View the Latest Search Terms</h3>
+
+      <p>To view the latest search terms.</p>
+
+      <pre><code>https://img-srch-abstraction.herokuapp.com/api/latest
+      </code></pre>
+  </div>
+  </body>
+</html>
