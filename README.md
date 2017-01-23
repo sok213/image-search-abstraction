@@ -31,6 +31,6 @@ To view the latest search terms.
 Run commands.
 
     npm install
-    node app.js
+    npm start
 
 Navigate to `http://localhost:3000`
