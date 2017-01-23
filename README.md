@@ -24,11 +24,12 @@ To view the latest search terms.
 
 ## How to Run on Local Machine
 
-#### prerequisites
+#### Prerequisites
 
 * Node ^7.4.0
 
-----
+Run commands.
+
     npm install
     node app.js
 
