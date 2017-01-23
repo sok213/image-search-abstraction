@@ -13,6 +13,7 @@ module.exports = app => {
         // If no error, send JSON data as an HTTP reponse.
         if (!err && response.statusCode == 200) {
           console.log(`Search for ${ req.params.term } was successful!`);
+          console.log(`Setting offset to ${ req.query.offset }`);
           
           // Format object to be sent as a response.
           let searchResults = {
@@ -52,7 +53,7 @@ module.exports = app => {
     // Find last 10 results and send it as an HTTP response.
     let options = {
       "limit": 5,
-      "sort": {timeSearched: -1}
+      "sort": { timeSearched: -1 }
     };
     
     searchQuery.find({}, {}, options, function(err, result){
