@@ -9,14 +9,6 @@ const express   = require('express'),
 // Connect to my mLab database.
 mongoose.connect(config.mlabURI());
 
-const db = mongoose.connection;
-
-// Errer and success handler.
-db.on('error', console.error.bind(console, 'connection error:'));
-db.on('open', function() {
-  console.log('connected');
-});
-
 // Serve app to apiController module which will listen to any 
 // request on /api/search/:term
 apiController(app);

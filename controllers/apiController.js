@@ -50,7 +50,12 @@ module.exports = app => {
   // the last 10 search terms pulled from mLab.
   app.get('/api/latest', (req, res) => {
     // Find last 10 results and send it as an HTTP response.
-    searchQuery.find({}, function(err, result){
+    let options = {
+      "limit": 5,
+      "sort": {timeSearched: -1}
+    };
+    
+    searchQuery.find({}, {}, options, function(err, result){
       res.send(result);
     });
   });
