@@ -5,9 +5,17 @@ const config  = require('../config'),
 
 module.exports = app => {
   app.get('/api/search/:term', (req, res) => {
+    
+    // Set default offset for pagination to 1.
+    let offset = 1;
+    
+    // If optional offset parameter is provided, store it to offset variable.
+    if(req.query.offset) {
+      offset = req.query.offset;
+    }
     // API request to get search term data from pixabay.
     request(`https://pixabay.com/api/?key=${ config.apiKEY() }` + 
-      `&q=${ req.params.term }&pretty=true&per_page=10`, 
+      `&q=${ req.params.term }&pretty=true&per_page=10&page=${ offset }`, 
       // Callback function for HTTP request.
       (err, response, data) => {
         // If no error, send JSON data as an HTTP reponse.
