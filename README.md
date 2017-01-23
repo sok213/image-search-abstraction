@@ -1,8 +1,6 @@
 # Image Search Abstraction Layer
 
-
-
-## How to use this application
+## How to Use
 
 ### Searching Images
 
