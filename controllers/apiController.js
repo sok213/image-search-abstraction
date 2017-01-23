@@ -62,7 +62,7 @@ module.exports = app => {
   app.get('/api/latest', (req, res) => {
     // Find last 10 results and send it as an HTTP response.
     let options = {
-      "limit": 5,
+      "limit": 10,
       "sort": { timeSearched: -1 }
     };
     
